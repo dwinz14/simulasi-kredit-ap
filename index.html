@@ -812,7 +812,7 @@
         transform: translateY(0);
       }
 
-            /* ─── Footer ─── */
+      /* ─── Footer ─── */
       .footer {
         margin-top: 32px;
         text-align: center;
@@ -945,7 +945,7 @@
         <div class="table-card">
           <div class="table-toolbar">
             <div class="table-toolbar-title">
-              Jadwal Angsuran
+              Tabel Angsuran
               <span class="pill" id="tablePill">—</span>
             </div>
             <button class="btn-export" onclick="exportCSV()">
@@ -978,10 +978,9 @@
     </main>
 
     <!-- ── Footer ── -->
-          <footer class="footer" role="contentinfo">
-        <p><strong>Information Technology</strong> &mdash; BPR Artha Pamenang &copy; 2026</p>
-      </footer>
-    </main>
+    <footer class="footer" role="contentinfo">
+      <p><strong>Information Technology</strong> &mdash; BPR Artha Pamenang &copy; <span id="year"></span></p>
+    </footer>
 
     <!-- Toast -->
     <div class="toast" id="toast"></div>
@@ -1425,8 +1424,11 @@
         sec.classList.add("visible");
 
         /* Scroll to result */
-        setTimeout(() => sec.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+        // setTimeout(() => sec.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       }
+
+      // footer
+      document.getElementById("year").textContent = new Date().getFullYear();
 
       /* ============================================================
    EXPORT CSV
